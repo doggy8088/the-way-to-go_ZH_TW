@@ -1,14 +1,14 @@
-# Go 入门指南
+# Go 入門指南
 
-## 本书介绍
+## 本書介紹
 
-在接触 Go 语言之后，对这门编程语言非常着迷，期间也陆陆续续开始一些帮助国内编程爱好者了解和发展 Go 语言的工作，比如开始录制视频教程[《Go编程基础》](https://github.com/Unknwon/go-fundamental-programming)。但由于目前国内并没有比较好的 Go 语言书籍，而国外的优秀书籍因为英文的缘故在一定程度上也为不少 Go 语言爱好者带来了一些学习上的困扰，不仅为了加快扩散 Go 爱好者的国内群体，本人在完成阅读这本名叫 《The Way to Go》 之后，决定每天抽出一点时间来进行翻译的工作，并且以开源的形式免费分享给有需要的 Go 语言爱好者。
+在接觸 Go 語言之後，對這門程式語言非常著迷，期間也陸陸續續開始一些幫助國內程式設計愛好者瞭解和發展 Go 語言的工作，比如開始錄製視訊課程[《Go程式設計基礎》](https://github.com/Unknwon/go-fundamental-programming)。但由於目前國內並沒有比較好的 Go 語言書籍，而國外的優秀書籍因為英文的緣故在一定程度上也為不少 Go 語言愛好者帶來了一些學習上的困擾，不僅為了加快擴散 Go 愛好者的國內群體，本人在完成閱讀這本名叫 《The Way to Go》 之後，決定每天抽出一點時間來進行翻譯的工作，並且以開源的形式免費分享給有需要的 Go 語言愛好者。
 
-## 关于译者
+## 關於譯者
 
-本书的主要译者是 [@无闻Unknwon](http://www.weibo.com/Obahua)，是一名 Go 语言爱好者和传播者，目前是 [Go Walker](https://gowalker.org)、Gopm、[Gogs](http://gogs.io) 和 [Macaron](https://github.com/Unknwon/macaron) 创始人，极客学院签约讲师。
+本書的主要譯者是 [@無聞Unknwon](http://www.weibo.com/Obahua)，是一名 Go 語言愛好者和傳播者，目前是 [Go Walker](https://gowalker.org)、Gopm、[Gogs](http://gogs.io) 和 [Macaron](https://github.com/Unknwon/macaron) 創始人，極客學院簽約講師。
 
-目前已由多位 Go 语言爱好者共同提交翻译内容，主要包括：
+目前已由多位 Go 語言愛好者共同提交翻譯內容，主要包括：
 
 - [@zhanming](https://github.com/zhanming)
 - themorecolor
@@ -21,15 +21,15 @@
 - [@glight2000](https://github.com/glight2000)
 - [@songleo](https://github.com/songleo)
 
-## 适用人群
+## 適用人群
 
-适合有一定编程基础，初学 Go 语言的爱好者。
+適合有一定程式設計基礎，初學 Go 語言的愛好者。
 
 >
 Martini&Macaron 交流群：371440803
 >
-Golang 编程：245386165
+Golang 程式設計：245386165
 
-|更新日期    |更新内容
+|更新日期    |更新內容
 |----------|------------------
-|2015-1-6|14.6 协程和恢复（recover）
+|2015-1-6|14.6 協程和恢復（recover）
