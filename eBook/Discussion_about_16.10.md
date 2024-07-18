@@ -1,15 +1,15 @@
 
 
-## 关于本文·16.10.2小结糟糕错误处理的一些见解
+## 關於本文·16.10.2小結糟糕錯誤處理的一些見解
 
-本文仅表达译者对错误处理的观点，并且觉得原文说的并不很合理，希望不会误导（我个人观点）其他入门读者。
+本文僅表達譯者對錯誤處理的觀點，並且覺得原文說的並不很合理，希望不會誤導（我個人觀點）其他入門讀者。
 
-### 关于16.10.2的第一个代码示例
+### 關於16.10.2的第一個程式碼範例
 
-16.10.2小结中关于错误处理的第一个代码示例是标准且通用的错误处理方式。
-文中认为这种错误处理方式会使你的代码中充满`if err != nil {...}`，认为这样会令人难以分辨正常的程序逻辑与错误处理（难道错误处理不算做正常的程序逻辑么:)）。
+16.10.2小結中關於錯誤處理的第一個程式碼範例是標準且通用的錯誤處理方式。
+文中認為這種錯誤處理方式會使你的程式碼中充滿`if err != nil {...}`，認為這樣會令人難以分辨正常的程式邏輯與錯誤處理（難道錯誤處理不算做正常的程式邏輯麼:)）。
 
-**书中代码示例一**：
+**書中程式碼範例一**：
 
 ```Go
 ... err1 := api.Func1()
@@ -24,24 +24,24 @@ if err2 != nil {
 }
 ```
 
-**我的观点**：
+**我的觀點**：
 
-1、错误处理也是正常程序逻辑的一部分，程序逻辑不就是对一个操作可能出现的结果进行判断，
-并对每一种结果做相应的后续处理么。错误是我们已知的可能会出现的一种结果，我们也需要处理这种情况，它也是正常逻辑的一部分。显然，把错误单独拎出来，与正常逻辑并列来做对待，并不合理。
-
-
-2、在其他语言中，我们可能会用到 try... catch...语句来对可能出现的错误进行处理，难道你会说try-catch语句让你的代码一团糟，程序逻辑和错误处理混在一起很复杂，让你阅读代码困难么。绝大多数情况下，让你感觉难以阅读甚至恶心（可能形容过度了）的代码绝不会是因为错误处理相关的代码导致的，而是当时写这些代码的人逻辑不清甚至逻辑混乱造成的。
+1、錯誤處理也是正常程式邏輯的一部分，程式邏輯不就是對一個操作可能出現的結果進行判斷，
+並對每一種結果做相應的後續處理麼。錯誤是我們已知的可能會出現的一種結果，我們也需要處理這種情況，它也是正常邏輯的一部分。顯然，把錯誤單獨拎出來，與正常邏輯並列來做對待，並不合理。
 
 
-3、这个可能和每个人的习惯（自己写代码的思路、风格）或者说适应（看其他人的代码时能很快习惯作者的代码风格）有关，我每次看代码都会先略过错误处理的部分，那么剩下的就是理想情况下的程序逻辑了，如果对某一处心存疑惑那么就再仔细看这部分的代码。毕竟我们写的代码绝大多数情况下是希望它按理想的情况跑的，
+2、在其他語言中，我們可能會用到 try... catch...語句來對可能出現的錯誤進行處理，難道你會說try-catch語句讓你的程式碼一團糟，程式邏輯和錯誤處理混在一起很複雜，讓你閱讀程式碼困難麼。絕大多數情況下，讓你感覺難以閱讀甚至噁心（可能形容過度了）的程式碼絕不會是因為錯誤處理相關的程式碼導致的，而是當時寫這些程式碼的人邏輯不清甚至邏輯混亂造成的。
+
+
+3、這個可能和每個人的習慣（自己寫程式碼的思路、風格）或者說適應（看其他人的程式碼時能很快習慣作者的程式碼風格）有關，我每次看程式碼都會先略過錯誤處理的部分，那麼剩下的就是理想情況下的程式邏輯了，如果對某一處心存疑惑那麼就再仔細看這部分的程式碼。畢竟我們寫的程式碼絕大多數情況下是希望它按理想的情況跑的，
 
 _ _ _
 
-### 关于16.10.2的第二个代码示例
+### 關於16.10.2的第二個程式碼範例
 
-16.10.2小结中关于错误处理的第二个代码示例是推荐给我们的错误处理方式，对于其推荐的这种方式，个人认为是有一定的适用范围的，并不适合大多数的错误处理，反而在处理某些业务逻辑时可以使用，比如将不符合业务逻辑的情况视作一种错误（自定义）来统一做处理。
+16.10.2小結中關於錯誤處理的第二個程式碼範例是推薦給我們的錯誤處理方式，對於其推薦的這種方式，個人認為是有一定的適用範圍的，並不適合大多數的錯誤處理，反而在處理某些業務邏輯時可以使用，比如將不符合業務邏輯的情況視作一種錯誤（自定義）來統一做處理。
 
-**书中代码示例二**：
+**書中程式碼範例二**：
 
 ```Go
 func httpRequestHandler(w http.ResponseWriter, req *http.Request) {
@@ -52,7 +52,7 @@ func httpRequestHandler(w http.ResponseWriter, req *http.Request) {
         if input := parseInput(req); input != "command" {
             return errors.New("malformed command")
         }
-        // 可以在此进行其他的错误检测
+        // 可以在此進行其他的錯誤檢測
     } ()
 
         if err != nil {
@@ -63,14 +63,14 @@ func httpRequestHandler(w http.ResponseWriter, req *http.Request) {
         doSomething() ...
 ```
 
-1、代码示例二中对不符合业务逻辑的两种情况做了归类，并自定义了错误，做了统一的处理。这样从业务层面来看，将不符合业务逻辑的情况视为错误，统一写到了匿名函数中，剩下了一个统一的错误处理与正常的业务逻辑。或许采用这种方式处理这类场景还不错，但是如果换作下面的这个示例可能就不是很合理了。
+1、程式碼範例二中對不符合業務邏輯的兩種情況做了歸類，並自定義了錯誤，做了統一的處理。這樣從業務層面來看，將不符合業務邏輯的情況視為錯誤，統一寫到了匿名函式中，剩下了一個統一的錯誤處理與正常的業務邏輯。或許採用這種方式處理這類場景還不錯，但是如果換作下面的這個範例可能就不是很合理了。
 
-下面的示例一是采用了作者推荐的统一处理错误方式，示例二使用的是通常的错误处理方式
+下面的範例一是採用了作者推薦的統一處理錯誤方式，範例二使用的是通常的錯誤處理方式
 
-**示例一**：
+**範例一**：
 
 ```Go
-// 目标目录下包含多种Archive格式文件，将其中的'x-msdownload'类型文件移动到其他目录下
+// 目標目錄下包含多種Archive格式檔案，將其中的'x-msdownload'型別檔案移動到其他目錄下
 func moveEXE(files []os.FileInfo, aimPath, exePath string) {
 	var numExe, numOther int
 	var fileBuf []byte
@@ -82,7 +82,7 @@ func moveEXE(files []os.FileInfo, aimPath, exePath string) {
 
 		err := func() error {  
             
-            // 读取文件内容
+            // 讀取檔案內容
 			if buf, err := ioutil.ReadFile(fileName); err != nil {
 				log.Printf("Time of read file: %s occur error: %s\n", fileName, err)
 				return err
@@ -90,7 +90,7 @@ func moveEXE(files []os.FileInfo, aimPath, exePath string) {
 				fileBuf = buf
 			}
             
-            // 判断文件是否为Archive（压缩）格式
+            // 判斷檔案是否為Archive（壓縮）格式
 			if kind, err := filetype.Archive(fileBuf); err!= nil {
 				log.Printf("Time of judge file type occur error: %s\n", err)
 				return err
@@ -98,7 +98,7 @@ func moveEXE(files []os.FileInfo, aimPath, exePath string) {
 				fileType = kind
 			}
             
-            // 文件是否为'x-msdownload'类型
+            // 檔案是否為'x-msdownload'型別
 			if fileSubType := fileType.MIME.Subtype; fileSubType == "x-msdownload" {
 				log.Printf("file : %s is exe file\n", fileName)
 				if err := os.Rename(fileName, newFileName); err != nil {
@@ -121,13 +121,13 @@ func moveEXE(files []os.FileInfo, aimPath, exePath string) {
 }
 ```
 
-1、通常来说，我们使用匿名函数是因为部分操作不值得新定义一个函数或者该函数仅使用一次，示例一中的匿名函数包含了很多操作，或许我们应该为此重新定义一个函数。其中包含了几乎全部的逻辑代码，我想这看起来并不是啥好主意，甚至如果你把更多的逻辑代码放到了匿名函数里，看起来应该会更加糟糕。
+1、通常來說，我們使用匿名函式是因為部分操作不值得新定義一個函式或者該函式僅使用一次，範例一中的匿名函式包含了很多操作，或許我們應該為此重新定義一個函式。其中包含了幾乎全部的邏輯程式碼，我想這看起來並不是啥好主意，甚至如果你把更多的邏輯程式碼放到了匿名函式裡，看起來應該會更加糟糕。
 
-**示例二**：
+**範例二**：
 
 ```Go
 
-// 目标目录下包含多种Archive格式文件，将其中的'x-msdownload'类型文件移动到其他目录下
+// 目標目錄下包含多種Archive格式檔案，將其中的'x-msdownload'型別檔案移動到其他目錄下
 func moveEXE(files []os.FileInfo, aimPath, exePath string) {
 	var numExe, numOther int
 
@@ -135,24 +135,24 @@ func moveEXE(files []os.FileInfo, aimPath, exePath string) {
 		fileName := aimPath + file.Name()
 		newFileName := exePath + file.Name()
 		
-        // 读取文件内容
+        // 讀取檔案內容
 		buf, err := ioutil.ReadFile(fileName)
 		if err != nil {
 			log.Printf("read file:%s  occur error\n", fileName)
 			continue
 		}
 		
-        // 判断文件是否为Archive（压缩）格式
+        // 判斷檔案是否為Archive（壓縮）格式
 		kind, err := filetype.Archive(buf)
 		if err != nil {
 			log.Println("judge file type error")
 			continue
 		}
 
-        // 获取文件具体的类型
+        // 獲取檔案具體的型別
 		fileSubType := kind.MIME.Subtype
 
-        // 文件是否为'x-msdownload'类型
+        // 檔案是否為'x-msdownload'型別
 		if fileSubType == "x-msdownload" {
 			log.Printf("file : %s is exe file\n", fileName)
 			err := os.Rename(fileName, newFileName)
@@ -170,21 +170,21 @@ func moveEXE(files []os.FileInfo, aimPath, exePath string) {
 }
 ```
 
-2、示例二中的代码看起来则自然多了（我是这种感觉），或许你认为这俩个例子相差无几，但是我想通过他们表明，原文16.10.2中推荐的错误处理方式是有一定的使用场景的，并不能取代标准且通用的错误处理方式，希望大家能够注意。
+2、範例二中的程式碼看起來則自然多了（我是這種感覺），或許你認為這倆個例子相差無幾，但是我想透過他們表明，原文16.10.2中推薦的錯誤處理方式是有一定的使用場景的，並不能取代標準且通用的錯誤處理方式，希望大家能夠注意。
 
 ---
 
 
 
-### 关于错误处理的一些延伸
+### 關於錯誤處理的一些延伸
 
-1、除了使用Go中已经定义好的error，我们也可以根据需要自定义error。
+1、除了使用Go中已經定義好的error，我們也可以根據需要自定義error。
 
-下面的示例三，我们自定义了parseError 错误，展示了发生错误的文件和具体的错误信息，在你读取目录下的多个文件时可以方便的告诉你具体在读哪个文件时发生了错误（作为示例，仅读取单个文件）。
+下面的範例三，我們自定義了parseError 錯誤，展示了發生錯誤的檔案和具體的錯誤訊息，在你讀取目錄下的多個檔案時可以方便的告訴你具體在讀哪個檔案時發生了錯誤（作為範例，僅讀取單個檔案）。
 
-示例四中，展示了调用 parseFile 函数时，调用者可以采用的一种错误处理方式，根据错误的类型，采取对应的操作。
+範例四中，展示了呼叫 parseFile 函式時，呼叫者可以採用的一種錯誤處理方式，根據錯誤的型別，採取對應的操作。
 
-**示例三**：
+**範例三**：
 
 ```go
 
@@ -232,7 +232,7 @@ func parseFile(path string) error {
 
 ```
 
-**示例四**：
+**範例四**：
 
 ```go
 func main()  {
@@ -248,13 +248,13 @@ func main()  {
 }
 ```
 
-2、如果你想在返回错误之前做一些额外的操作，比如记录日志，那你可以单独写一个额外处理错误的函数或者一个匿名函数就可以（这取决于你是否常用该函数或它的功能是否很多），类似Python中的装饰器一样。
+2、如果你想在回傳錯誤之前做一些額外的操作，比如記錄日誌，那你可以單獨寫一個額外處理錯誤的函式或者一個匿名函式就可以（這取決於你是否常用該函式或它的功能是否很多），類似Python中的裝飾器一樣。
 
-示例五中，handleError 将错误写入到了指定日志文件中；
+範例五中，handleError 將錯誤寫入到了指定日誌檔案中；
 
-示例六中，parseFile 中使用 `defer func() {handleError("/home/rabbit/go/test_use/log", err)}()`代替了多次出现的`log.Println(readError.Error())`，并将日志记录持久化到文件中。
+範例六中，parseFile 中使用 `defer func() {handleError("/home/rabbit/go/test_use/log", err)}()`代替了多次出現的`log.Println(readError.Error())`，並將日誌記錄持久化到檔案中。
 
-**示例五**:
+**範例五**:
 
 ```go
 func handleError(logPath string, err error) {
@@ -272,7 +272,7 @@ func handleError(logPath string, err error) {
 }
 ```
 
-**示例六**:
+**範例六**:
 
 ```go
 func parseFile(path string) (err error) {

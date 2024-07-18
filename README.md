@@ -1,37 +1,37 @@
-《Go入门指南》
+《Go入門指南》
 ===================
 
-在接触 Go 语言之后，对这门编程语言非常着迷，期间也陆陆续续开始一些帮助国内编程爱好者了解和发展 Go 语言的工作，比如开始录制视频教程[《Go编程基础》](https://github.com/Unknwon/go-fundamental-programming)。但由于目前国内并没有比较好的 Go 语言书籍，而国外的优秀书籍因为英文的缘故在一定程度上也为不少 Go 语言爱好者带来了一些学习上的困扰，不仅为了加快扩散 Go 爱好者的国内群体，本人在完成阅读这本名叫 《The Way to Go》 之后，决定每天抽出一点时间来进行翻译的工作，并且以开源的形式免费分享给有需要的 Go 语言爱好者。
+在接觸 Go 語言之後，對這門程式語言非常著迷，期間也陸陸續續開始一些幫助國內程式設計愛好者瞭解和發展 Go 語言的工作，比如開始錄製影片教程[《Go程式設計基礎》](https://github.com/Unknwon/go-fundamental-programming)。但由於目前國內並沒有比較好的 Go 語言書籍，而國外的優秀書籍因為英文的緣故在一定程度上也為不少 Go 語言愛好者帶來了一些學習上的困擾，不僅為了加快擴散 Go 愛好者的國內群體，本人在完成閱讀這本名叫 《The Way to Go》 之後，決定每天抽出一點時間來進行翻譯的工作，並且以開源的形式免費分享給有需要的 Go 語言愛好者。
 
-尽管该书对目前 Go 语言版本来说有小部分内容相对过时，但是为当下不可多得的好书，相关内容已获得作者同意根据当前 Go 语言版本进行修改而不作出特别声明。
+儘管該書對目前 Go 語言版本來說有小部分內容相對過時，但是為當下不可多得的好書，相關內容已獲得作者同意根據當前 Go 語言版本進行修改而不作出特別宣告。
 
-该翻译版本已获得原作者（Ivo Balbaert）本人授权，并表示支持开源事业的发展！
+該翻譯版本已獲得原作者（Ivo Balbaert）本人授權，並表示支援開源事業的發展！
 
-## 翻译进度
+## 翻譯進度
 
-19.10 [总结和增强](eBook/19.10.md)
+19.10 [總結和增強](eBook/19.10.md)
 
-## 支持本书
+## 支援本書
 
-如果你喜欢本书 《Go入门指南》，你可以参与到本书的翻译或纠正工作中来，具体请联系【无闻 E-mail：u#gogs.io】，一同完善本书并帮助壮大 Go 语言在国内的学习群体，给大家提供更好的学习资源。
+如果你喜歡本書 《Go入門指南》，你可以參與到本書的翻譯或糾正工作中來，具體請聯絡【無聞 E-mail：u#gogs.io】，一同完善本書並幫助壯大 Go 語言在國內的學習群體，給大家提供更好的學習資源。
 
-## 交流社区
+## 交流社群
 
-参见 [Go 语言学习资料与社区索引](https://github.com/Unknwon/go-study-index)。
+參見 [Go 語言學習資料與社群索引](https://github.com/Unknwon/go-study-index)。
 
-关注 Go 语言中文网公众号学习 Go
+關注 Go 語言中文網公眾號學習 Go
 
 ![](studygolang-qrcode.jpg)
 
-### 新人守则
+### 新人規則
 
-- 2012 年 3 月 28 日以前的博文中的内容基本过时，不要再看
-- 符合等式 ***百度+思考+失败+翻墙+谷歌+尝试=解决*** 的问题最好不要发问
+- 2012 年 3 月 28 日以前的博文中的內容基本過時，不要再看
+- 符合等式 ***百度+思考+失敗+翻牆+谷歌+嘗試=解決*** 的問題最好不要發問
 
-## 致谢
+## 致謝
 
-- 本书原作者：Ivo Balbaert
-- 参与翻译人员：
+- 本書原作者：Ivo Balbaert
+- 參與翻譯人員 ([簡體中文](https://github.com/unknwon/the-way-to-go_ZH_CN))：
 	- [@zhanming](https://github.com/zhanming)
 	- themorecolor
 	- [@everyx](https://github.com/everyx)
@@ -44,14 +44,18 @@
 	- [@songleo](https://github.com/songleo)
 	- [@marjune163](https://github.com/marjune163)
 
-## 授权许可
+## 授權許可
 
-除特别声明外，本书中的内容使用 [CC BY-SA 3.0 License](http://creativecommons.org/licenses/by-sa/3.0/)（创作共用 署名-相同方式共享3.0 许可协议）授权，代码遵循 [BSD 3-Clause License](https://github.com/astaxie/build-web-application-with-golang/blob/master/LICENSE.md)（3 项条款的 BSD 许可协议）。
+除特別宣告外，本書中的內容使用 [CC BY-SA 3.0 License](http://creativecommons.org/licenses/by-sa/3.0/)（創作共用 署名-相同方式共享3.0 許可協定）授權，程式碼遵循 [BSD 3-Clause License](https://github.com/astaxie/build-web-application-with-golang/blob/master/LICENSE.md)（3 項條款的 BSD 許可協定）。
 
-## 开始阅读
+## 正體中文翻譯
 
-- 您可以选择以下方式阅读本书：
-  - [GitHub在线](./eBook/preface.md)
+本書正體中文翻譯由 [Will 保哥](http://blog.miniasp.com/) 協助完成，原文取自[簡體中文翻譯版本](https://github.com/unknwon/the-way-to-go_ZH_CN)。若有任何問題，歡迎造訪 [Will 保哥的技術交流中心](https://www.facebook.com/will.fans) 與我聯繫！
 
-想读书的人，不会找不到 [目录](eBook/directory.md) :)
+## 開始閱讀
+
+- 您可以選擇以下方式閱讀本書：
+  - [GitHub線上](./eBook/preface.md)
+
+想讀書的人，不會找不到 [目錄](eBook/directory.md) 🙂
 
